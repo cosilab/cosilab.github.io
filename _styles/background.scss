@@ -8,7 +8,14 @@
   z-index: 1;
 }
 
-.background:before {
+.background-banner {
+  position: relative;
+  background: #02102b;
+  color: var(--text);
+  z-index: 1;
+}
+
+.background-banner:before {
   content: "";
   position: absolute;
   inset: 0;
