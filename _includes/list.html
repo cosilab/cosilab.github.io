@@ -5,6 +5,10 @@
   | data_filter: include.filter
 %}
 
+{% if include.sort %}
+  {% assign data = data | sort: include.sort %}
+{% endif %}
+
 {% assign years = data
   | group_by_exp: "d", "d.date | date: '%Y'"
   | sort: "name"
@@ -24,13 +28,16 @@
 
     {%
       include {{ include.component | append: ".html" }}
+      abstract=d.abstract
       affiliation=d.affiliation
       author=d.author
       authors=d.authors
+      bibtex=d.bibtex
       buttons=d.buttons
       caption=d.caption
       content=d.content
       date=d.date
+      date_text=d.date_text
       description=d.description
       excerpt=d.excerpt
       height=d.height
@@ -41,6 +48,7 @@
       link=d.link
       lookup=d.lookup
       name=d.name
+      note=d.note
       publisher=d.publisher
       repo=d.repo
       role=d.role

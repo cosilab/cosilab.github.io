@@ -32,9 +32,10 @@
 
 {% assign description = description | xml_escape %}
 
+{% assign svg = "images/cosi-logo-mid.svg" | file_exists %}
 {% assign png = "images/icon.png" | file_exists %}
 {% assign jpg = "images/icon.jpg" | file_exists %}
-{% assign icon = png | default: jpg | relative_url %}
+{% assign icon = svg | default: png | default: jpg | relative_url %}
 
 {% assign jpg = "images/share.jpg" | file_exists %}
 {% assign png = "images/share.png" | file_exists %}

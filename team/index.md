@@ -1,35 +1,23 @@
 ---
-title: Team
+title: Group
 nav:
-  order: 3
+  order: 1
   tooltip: About our team
 ---
 
-# {% include icon.html icon="fa-solid fa-users" %}Team
+# {% include icon.html icon="fa-solid fa-users" %}Group
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Faculty
 
-{% include section.html %}
+{% include list.html data="members" component="portrait" filter="role == 'principal-investigator' && alum != true" %}
 
-{% include list.html data="members" component="portrait" filter="role == 'pi'" %}
-{% include list.html data="members" component="portrait" filter="role != 'pi'" %}
+## Members
 
-{% include section.html background="images/background.jpg" dark=true %}
+{% include list.html data="members" component="portrait" filter="role == 'phd' && group == 'advisee' && alum != true" sort="order" %}
+{% include list.html data="members" component="portrait" filter="role == 'phd' && group == 'collaborator' && alum != true" %}
+{% include list.html data="members" component="portrait" filter="role == 'research-assistant' && alum != true" %}
+{% include list.html data="members" component="portrait" filter="role != 'phd' && role != 'research-assistant' && role != 'principal-investigator' && alum != true" %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Alumni
 
-{% include section.html %}
-
-{% capture content %}
-
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
-
-{% endcapture %}
-
-{% include grid.html style="square" content=content %}
+{% include list.html data="members" component="portrait" filter="alum == true" %}

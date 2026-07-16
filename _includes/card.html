@@ -1,19 +1,21 @@
 {{ " " }}
 <div class="card" data-style="{{ include.style }}">
-  <a
-    {% if include.link %}
-      href="{{ include.link | relative_url | uri_escape }}"
-    {% endif %}
-    aria-label="{{ include.title | default: "card link" | regex_strip }}"
-    class="card-image"
-  >
-    <img
-      src="{{ include.image | relative_url | uri_escape }}"
-      alt="{{ include.title | default: "card image" | regex_strip }}"
-      loading="lazy"
-      {% include fallback.html %}
+  {% if include.image %}
+    <a
+      {% if include.link %}
+        href="{{ include.link | relative_url | uri_escape }}"
+      {% endif %}
+      aria-label="{{ include.title | default: "card link" | regex_strip }}"
+      class="card-image"
     >
-  </a>
+      <img
+        src="{{ include.image | relative_url | uri_escape }}"
+        alt="{{ include.title | default: "card image" | regex_strip }}"
+        loading="lazy"
+        {% include fallback.html %}
+      >
+    </a>
+  {% endif %}
 
   <div class="card-text">
     {% if include.title %}
@@ -34,10 +36,31 @@
       <span class="card-subtitle">{{ include.subtitle }}</span>
     {% endif %}
 
+    {% if include.authors %}
+      <div class="card-authors">
+        {{ include.authors | join: ", " | markdownify | remove: "<p>" | remove: "</p>" }}
+      </div>
+    {% endif %}
+
     {% if include.description %}
       <p>
         {{ include.description | markdownify | remove: "<p>" | remove: "</p>" }}
       </p>
+    {% endif %}
+
+    {% if include.buttons.size > 0 %}
+      <div class="card-buttons">
+        {% for button in include.buttons %}
+          {%
+            include button.html
+            type=button.type
+            icon=button.icon
+            text=button.text
+            link=button.link
+            style="bare"
+          %}
+        {% endfor %}
+      </div>
     {% endif %}
 
     {% if include.tags or include.repo %}
