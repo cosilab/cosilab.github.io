@@ -14,9 +14,21 @@ phd:
   icon: fa-solid fa-graduation-cap
   description: PhD Student
 
+research-assistant:
+  icon: fa-solid fa-flask
+  description: Research Assistant
+
 undergrad:
   icon: fa-solid fa-user-graduate
   description: Undergraduate Student
+
+urop-fyp-student:
+  icon: fa-solid fa-user-graduate
+  description: UROP / FYP Student
+
+collaborator:
+  icon: fa-solid fa-handshake
+  description: Collaborator
 
 programmer:
   icon: fa-solid fa-code
@@ -176,6 +188,11 @@ journal:
 
 preprint:
   icon: fa-regular fa-eye
+  text: Preprint
+  tooltip: Preprint
+
+arxiv:
+  icon: fa-solid fa-scroll
   text: Preprint
   tooltip: Preprint
 

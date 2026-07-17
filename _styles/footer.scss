@@ -9,6 +9,9 @@ footer {
   gap: 15px;
   padding: 30px;
   line-height: var(--spacing);
+  background: var(--background);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
 }
 
 footer a {

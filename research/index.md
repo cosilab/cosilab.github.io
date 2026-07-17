@@ -1,8 +1,10 @@
 ---
 title: Research
 nav:
-  order: 1
-  tooltip: Published works
+  order: 3
+  tooltip: Research and publications
+redirect_from:
+  - /publications/
 ---
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Research
