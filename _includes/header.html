@@ -1,23 +1,5 @@
-{% assign image = page.header | default: site.header %}
-{% assign dark = page.header-dark | is_nil: site.header-dark | is_nil: true %}
-
-{% assign svg = "images/logo.svg" | file_exists %}
-{% assign png = "images/logo.png" | file_exists %}
-{% assign jpg = "images/logo.jpg" | file_exists %}
-{% assign logo = svg | default: png | default: jpg | default: nil %}
-
-<header
-  class="background-banner"
-  style="--image: url('{{ image | relative_url | uri_escape }}')"
-  {% if dark == true or dark == false %}
-    data-dark="{{ dark }}"
-  {% endif %}
-  {% if page.url == "/" %}
-    data-big
-  {% endif %}
->
-  <a href="{{ "/" | relative_url }}" class="home">
-    {% if logo %}
+<header class="ribbon">
+  <a href="{{ "/" | relative_url }}" class="home" data-tooltip="Home">
     <span class="logo">
       <img src="{{ "images/cosi-logo-mid.svg" | relative_url | uri_escape }}" alt="cosilab logo">
     </span>

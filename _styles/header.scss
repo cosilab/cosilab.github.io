@@ -8,7 +8,7 @@ $collapse: 700px;
 $sticky: true;
 
 // theme-aware ribbon on every page, follows dark mode
-header {
+header.ribbon {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,12 +30,14 @@ header {
   }
 }
 
-header a {
+header.ribbon a {
   color: var(--text);
   text-decoration: none;
 }
 
-.home {
+// logo pinned to the extreme left, same static mark on every page
+// (scoped to the ribbon — body.home on the homepage must not match)
+header.ribbon .home {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -46,6 +48,7 @@ header a {
 
 .logo {
   height: $logo;
+  display: flex;
 }
 
 .logo > * {
