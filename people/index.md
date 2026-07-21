@@ -1,0 +1,22 @@
+---
+title: People
+nav:
+  order: 2
+---
+
+# {% include icon.html icon="fa-solid fa-users" %}People
+
+## Faculty
+
+{% include list.html data="members" component="portrait" filter="role == 'principal-investigator' && alum != true" %}
+
+## Members
+
+{% include list.html data="members" component="portrait" filter="role == 'phd' && group == 'advisee' && alum != true" sort="order" %}
+{% include list.html data="members" component="portrait" filter="role == 'phd' && group == 'collaborator' && alum != true" %}
+{% include list.html data="members" component="portrait" filter="role == 'research-assistant' && alum != true" %}
+{% include list.html data="members" component="portrait" filter="role != 'phd' && role != 'research-assistant' && role != 'principal-investigator' && alum != true" %}
+
+## Alumni
+
+{% include list.html data="members" component="portrait" filter="alum == true" %}

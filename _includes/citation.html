@@ -10,7 +10,7 @@
 
 <div class="citation-container">
   <div class="citation">
-    {% if include.style == "rich" %}
+    {% if include.style == "rich" and citation.image %}
       <a
         {% if citation.link %}
           href="{{ citation.link | relative_url | uri_escape }}"
@@ -28,9 +28,6 @@
     {% endif %}
 
     <div class="citation-text">
-      {% assign type = site.data.types[citation.type] %}
-      {% include icon.html icon=type.icon %}
-
       <a
         {% if citation.link %}
           href="{{ citation.link | relative_url | xml_escape }}"
@@ -63,13 +60,9 @@
         <span class="citation-publisher">
           {{- citation.publisher | default: "[no publisher info]" -}}
         </span>
-        &nbsp;·&nbsp;
         <span class="citation-date">
-          {{- citation.date | default: "[no date info]" | date: "%d %b %Y" -}}
-        </span>
-        &nbsp;·&nbsp;
-        <span class="citation-id">
-          {{- citation.id | default: "[no id info]" -}}
+          {%- assign full_date = citation.date | date: "%b %Y" -%}
+          {{- citation.date_text | default: full_date -}}
         </span>
       </div>
 
@@ -85,8 +78,22 @@
           </div>
         {% endif %}
 
-        {% if citation.buttons.size > 0 %}
+        {% if citation.abstract or citation.bibtex or citation.buttons.size > 0 %}
           <div class="citation-buttons">
+            {% if citation.abstract %}
+              <button
+                class="button citation-toggle"
+                data-panel="abstract"
+                aria-expanded="false"
+              >Abs</button>
+            {% endif %}
+            {% if citation.bibtex %}
+              <button
+                class="button citation-toggle"
+                data-panel="bibtex"
+                aria-expanded="false"
+              >Bib</button>
+            {% endif %}
             {% for button in citation.buttons %}
               {%
                 include button.html
@@ -98,6 +105,16 @@
               %}
             {% endfor %}
           </div>
+        {% endif %}
+
+        {% if citation.abstract %}
+          <div class="citation-panel citation-abstract" hidden>
+            {{ citation.abstract | markdownify }}
+          </div>
+        {% endif %}
+
+        {% if citation.bibtex %}
+          <pre class="citation-panel citation-bibtex" hidden>{{ citation.bibtex | xml_escape }}</pre>
         {% endif %}
 
         {% if citation.tags.size > 0 or citation.repo %}

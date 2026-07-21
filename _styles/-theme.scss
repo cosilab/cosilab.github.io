@@ -3,7 +3,7 @@
 
 // colors
 [data-dark="false"] {
-  --primary: #0795d9;
+  --primary: #6699cc;
   --secondary: #7dd3fc;
   --text: #000000;
   --background: #ffffff;
@@ -14,23 +14,23 @@
   --overlay: #00000020;
 }
 [data-dark="true"] {
-  --primary: #0795d9;
+  --primary: #6699cc;
   --secondary: #075985;
   --text: #ffffff;
-  --background: #181818;
-  --background-alt: #1c1c1c;
+  --background: #02102b;
+  --background-alt: #0b1836;
   --light-gray: #404040;
   --gray: #808080;
   --dark-gray: #b0b0b0;
-  --overlay: #ffffff10;
+  --overlay: #ffffff30;
 }
 
 :root {
   // font families
-  --title: "Barlow", sans-serif;
-  --heading: "Barlow", sans-serif;
-  --body: "Barlow", sans-serif;
-  --code: "Roboto Mono", monospace;
+  --title: "Noto Sans", sans-serif;
+  --heading: "Noto Sans", sans-serif;
+  --body: "Noto Sans", sans-serif;
+  --code: "Inconsolata", monospace;
 
   // font sizes
   --large: 1.2rem;
@@ -44,8 +44,8 @@
   --bold: 600;
 
   // text line spacing
-  --spacing: 2;
-  --compact: 1.5;
+  --spacing: 1.15;
+  --compact: 1;
 
   // effects
   --rounded: 3px;

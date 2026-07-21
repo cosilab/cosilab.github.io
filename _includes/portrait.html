@@ -1,5 +1,5 @@
 {% if include.lookup %}
-  {% assign member = site.members 
+  {% assign member = site.members
     | where_exp: "member", "member.slug == include.lookup"
     | first
   %}
@@ -10,18 +10,7 @@
 {% assign type = site.data.types[member.role] %}
 
 <div class="portrait-wrapper">
-  <a
-    {% if page.slug != member.slug %}
-      href="{{ member.url | relative_url | uri_escape }}"
-    {% endif %}
-    class="portrait"
-    data-style="{{ include.style }}"
-    aria-label="{{ member.name | default: "member link" | regex_strip }}"
-  >
-    {% if type %}
-      {% include icon.html icon=type.icon %}
-    {% endif %}
-
+  <div class="portrait" data-style="{{ include.style }}">
     <img
       src="{{ member.image | relative_url | uri_escape }}"
       class="portrait-image"
@@ -31,9 +20,16 @@
     >
 
     {% if member.name %}
-      <span class="portrait-name">
-        {{ member.name }}
-      </span>
+      {% if member.link %}
+        <a
+          class="portrait-name"
+          href="{{ member.link }}"
+          target="_blank"
+          rel="noopener"
+        >{{ member.name }}</a>
+      {% else %}
+        <span class="portrait-name">{{ member.name }}</span>
+      {% endif %}
     {% endif %}
 
     {% if member.description or type %}
@@ -42,10 +38,14 @@
       </span>
     {% endif %}
 
+    {% if member.note %}
+      <span class="portrait-note">{{ member.note }}</span>
+    {% endif %}
+
     {% if member.affiliation %}
       <span class="portrait-affiliation">
         {{ member.affiliation }}
       </span>
     {% endif %}
-  </a>
+  </div>
 </div>

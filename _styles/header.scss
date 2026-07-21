@@ -1,20 +1,27 @@
 ---
 ---
 
-$logo-big: 80px;
+$logo-big: 50vmin;
 $logo: 40px;
-$big-padding: 100px;
+$big-padding: 50px;
 $collapse: 700px;
 $sticky: true;
 
-header {
+// theme-aware ribbon on every page, follows dark mode
+header.ribbon {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
-  box-shadow: var(--shadow);
+  // sticky flex-items don't reliably stretch to the container width, so force it
+  width: 100%;
+  padding: 15px 20px;
+  background: var(--background);
+  color: var(--text);
+  // downward-only shadow — no side (vertical) bleed
+  box-shadow: 0 6px 6px -6px var(--overlay);
+  transition: background var(--transition), color var(--transition);
 
   @if $sticky {
     position: sticky !important;
@@ -23,16 +30,17 @@ header {
   }
 }
 
-header a {
+header.ribbon a {
   color: var(--text);
   text-decoration: none;
 }
 
-.home {
+// logo pinned to the extreme left, same static mark on every page
+// (scoped to the ribbon — body.home on the homepage must not match)
+header.ribbon .home {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
@@ -40,6 +48,7 @@ header a {
 
 .logo {
   height: $logo;
+  display: flex;
 }
 
 .logo > * {
@@ -56,10 +65,12 @@ header a {
   min-width: 0;
   font-family: var(--title);
   text-align: left;
+  padding-left: 10px;
 }
 
 .title {
   font-size: var(--large);
+  font-weight: var(--bold);
 }
 
 .subtitle {
@@ -101,20 +112,22 @@ nav {
   flex-wrap: wrap;
   gap: 10px;
   font-family: var(--heading);
-  text-transform: uppercase;
+  font-weight: var(--semi-bold);
+  text-transform: unset;
 }
 
 nav > a {
   padding: 5px;
+  color: var(--text);
 }
 
 nav > a:hover {
   color: var(--primary);
 }
 
-header:not([data-big]) {
+header.ribbon {
   @media (max-width: $collapse) {
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .nav-toggle {
       display: flex;
@@ -132,11 +145,13 @@ header:not([data-big]) {
   }
 }
 
+// Retain the dev template's large-header behavior for pages that opt into it.
 header[data-big] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: $big-padding 20px;
+  height: 100vh;
 
   @if $sticky {
     top: unset;
@@ -156,6 +171,7 @@ header[data-big] {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    line-height: 1.5;
   }
 
   .title {

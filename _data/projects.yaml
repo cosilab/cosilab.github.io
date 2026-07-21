@@ -1,47 +1,26 @@
-- title: Cool Dataset
-  subtitle: a subtitle
-  group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
+- title: "An Enigma of Artificial Reason: Investigating the Production-Evaluation Gap in Large Reasoning Models"
+  image: projects/enigma-of-reason.jpg
+  link: https://arxiv.org/abs/2606.01462
+  authors:
+    - "**Mingzhong Sun**"
+    - Teresa Yeo
+    - Armando Solar-Lezama
+    - "**Tan Zhi-Xuan**"
+  buttons:
+    - type: arxiv
+      link: https://arxiv.org/abs/2606.01462
 
-- title: Cool Package
-  subtitle: a subtitle
-  group: featured
+- title: "Role-Based Self-Organization as a Boundedly Rational Process"
   image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
+  authors:
+    - "**Joseph Low**"
+    - "**Bhavyesh Sajja**"
+    - "**Tan Zhi-Xuan**"
 
-- title: Cool Tutorial
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - resource
-    - publication
-
-- title: Cool Web App
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - software
-
-- title: Cool Web Server
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
-  tags:
-    - software
+- title: "Evaluating Rational Contracting in Natural Language"
+  image: projects/rational-contracting.png
+  authors:
+    - "**Bhavyesh Sajja**"
+    - Max Kleiman-Weiner
+    - Roger Zimmermann
+    - "**Tan Zhi-Xuan**"

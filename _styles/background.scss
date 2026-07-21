@@ -8,6 +8,25 @@
   z-index: 1;
 }
 
+.background-banner {
+  position: relative;
+  background: #02102b;
+  color: var(--text);
+  z-index: 1;
+}
+
+.background-banner:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0.25;
+  z-index: -1;
+}
+
 .background:before {
   content: "";
   position: absolute;
