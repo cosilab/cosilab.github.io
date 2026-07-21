@@ -3,7 +3,9 @@
   ![on-pull-request](../../actions/workflows/on-pull-request.yaml/badge.svg)
   ![on-schedule](../../actions/workflows/on-schedule.yaml/badge.svg)
 
-  # cosilab's Website
+  # CoSI Lab Website
+
+  Website of the Cooperative Systems and Intelligence (CoSI) lab. 
 
   Visit **[cosilab.github.io](https://cosilab.github.io)** 🚀
 
