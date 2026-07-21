@@ -9,7 +9,7 @@ ul {
 }
 
 li {
-  margin: 5px 0;
+  margin: 2.75px 0;
   padding-left: 10px;
   text-align: justify;
   line-height: var(--spacing);
@@ -17,6 +17,10 @@ li {
 li ul,
 li ol {
   margin: 0;
+}
+li ul li,
+li ol li {
+  margin: 0.703125px 0;
 }
 
 /*# sourceMappingURL=list.css.map */

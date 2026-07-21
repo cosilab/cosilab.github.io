@@ -8,9 +8,12 @@
     // make sure Tippy library available
     if (typeof tippy === "undefined") return;
 
-    // get elements with non-empty tooltips
+    // get elements with non-empty tooltips (skip hyperlinks — no hover bubbles on links)
     const elements = [...document.querySelectorAll("[data-tooltip]")].filter(
-      (element) => element.dataset.tooltip.trim() && !element._tippy
+      (element) =>
+        element.dataset.tooltip.trim() &&
+        !element._tippy &&
+        element.tagName !== "A"
     );
 
     // add tooltip to elements

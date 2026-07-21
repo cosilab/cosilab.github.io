@@ -6,13 +6,26 @@
   margin: 40px 0;
 }
 
-.feature-image {
+.feature-image-wrap {
   flex-shrink: 0;
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-image {
+  width: 100%;
   aspect-ratio: 3/2;
   border-radius: var(--rounded);
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.feature-caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--gray);
 }
 
 .feature-image img {
@@ -40,7 +53,7 @@
   .feature {
     flex-direction: column !important;
   }
-  .feature-image {
+  .feature-image-wrap {
     width: 100%;
     max-width: 400px;
   }

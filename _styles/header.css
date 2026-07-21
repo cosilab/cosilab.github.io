@@ -1,26 +1,29 @@
-header {
+header.ribbon {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
-  box-shadow: var(--shadow);
+  width: 100%;
+  padding: 15px 20px;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: 0 6px 6px -6px var(--overlay);
+  transition: background var(--transition), color var(--transition);
   position: sticky !important;
   top: 0;
   z-index: 10 !important;
 }
 
-header a {
+header.ribbon a {
   color: var(--text);
   text-decoration: none;
 }
 
-.home {
+header.ribbon .home {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
@@ -28,6 +31,7 @@ header a {
 
 .logo {
   height: 40px;
+  display: flex;
 }
 
 .logo > * {
@@ -44,10 +48,12 @@ header a {
   min-width: 0;
   font-family: var(--title);
   text-align: left;
+  padding-left: 10px;
 }
 
 .title {
   font-size: var(--large);
+  font-weight: var(--bold);
 }
 
 .subtitle {
@@ -89,11 +95,13 @@ nav {
   flex-wrap: wrap;
   gap: 10px;
   font-family: var(--heading);
-  text-transform: uppercase;
+  font-weight: var(--semi-bold);
+  text-transform: unset;
 }
 
 nav > a {
   padding: 5px;
+  color: var(--text);
 }
 
 nav > a:hover {
@@ -101,16 +109,16 @@ nav > a:hover {
 }
 
 @media (max-width: 700px) {
-  header:not([data-big]) {
-    justify-content: flex-end;
+  header.ribbon {
+    justify-content: space-between;
   }
-  header:not([data-big]) .nav-toggle {
+  header.ribbon .nav-toggle {
     display: flex;
   }
-  header:not([data-big]) .nav-toggle:not(:checked) + nav {
+  header.ribbon .nav-toggle:not(:checked) + nav {
     display: none;
   }
-  header:not([data-big]) nav {
+  header.ribbon nav {
     align-items: flex-end;
     flex-direction: column;
     width: 100%;
@@ -121,7 +129,8 @@ header[data-big] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 100px 20px;
+  padding: 50px 20px;
+  height: 100vh;
   top: unset;
 }
 header[data-big] .home {
@@ -129,13 +138,14 @@ header[data-big] .home {
   flex-grow: 0;
 }
 header[data-big] .logo {
-  height: 80px;
+  height: 50vmin;
   flex-shrink: 0;
 }
 header[data-big] .title-text {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  line-height: 1.5;
 }
 header[data-big] .title {
   font-size: var(--xxl);

@@ -2,13 +2,15 @@
   container-type: inline-size;
 }
 
+.citation-container + h3 {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--light-gray);
+}
+
 .citation {
   display: flex;
-  margin: 20px 0;
-  border-radius: var(--rounded);
-  background: var(--background);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  margin: 25px 0;
 }
 
 .citation-image {
@@ -29,11 +31,9 @@
   position: relative;
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   max-width: 100%;
   height: min-content;
-  padding: 20px;
-  padding-left: 30px;
   text-align: left;
   overflow-wrap: break-word;
   z-index: 0;
@@ -47,21 +47,18 @@
 }
 
 .citation-title {
-  font-weight: var(--semi-bold);
+  color: var(--text);
+  font-weight: var(--bold);
 }
 
-.citation-text > .icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: var(--light-gray);
-  opacity: 0.5;
-  font-size: 30px;
-  z-index: -1;
+.citation-authors strong {
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .citation-publisher {
-  text-transform: capitalize;
+  font-style: italic;
 }
 
 .citation-description {
@@ -71,11 +68,49 @@
 .citation-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 5px;
 }
 
-.citation-buttons .button {
+.citation .citation-buttons .button {
   margin: 0;
+  padding: 3px 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--rounded);
+  background: none;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: var(--regular);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.citation .citation-buttons .button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.citation .citation-buttons .button .icon {
+  display: none;
+}
+
+.citation-panel {
+  width: 100%;
+  margin: 5px 0 0 0;
+  padding: 10px 15px;
+  border-left: 2px solid var(--light-gray);
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
+.citation-abstract > :last-child {
+  margin-bottom: 0;
+}
+
+.citation-bibtex {
+  font-family: var(--code);
+  white-space: pre;
+  overflow-x: auto;
 }
 
 .citation-text > .tags {
