@@ -6,8 +6,16 @@
   -->
 
   <div>
+    {% for link in site.links %}
+      {% assign key = link[0] %}
+      {% assign value = link[1] %}
+      {% include button.html type=key text="" link=value style="bare" %}
+    {% endfor %}
+  </div>
+
+  <div>
     &copy; {{ site.time | date: "%Y" }}
-    {{ site.title }}
+    {{ site.title-long }}
   </div>
 
   <input

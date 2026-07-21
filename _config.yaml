@@ -10,11 +10,11 @@ proofer: false
 # site social media and other links
 links:
   email: cosi.laboratory@gmail.com
-  orcid: 0000-0001-8713-9213
-  google-scholar: ETJoidYAAAAJ
+  # orcid: 0000-0001-8713-9213
+  # google-scholar: ETJoidYAAAAJ
   github: cosilab
-  twitter: cosilab
-  youtube: cosilab
+  # twitter: cosilab
+  # youtube: cosilab
 
 ### jekyll settings
 
