@@ -13,4 +13,4 @@ The Cooperative Systems and Intelligence (CoSI) lab is a research group focused 
 
 By reverse engineering the foundations of human cooperation, and using those insights to build rational and human-like cooperative systems, we aim to enable collective safety and mutual flourishing in an increasingly automated future.
 
-Our group is led by Assistant Professor [Tan Zhi Xuan](https://ztangent.github.io), and based in the [National University of Singapore (NUS) Department of Computer Science](https://www.comp.nus.edu.sg/cs/).
+Our group is led by Assistant Professor [Tan Zhi Xuan](https://ztangent.github.io), and based in the [Department of Computer Science](https://www.comp.nus.edu.sg/cs/) of the National University of Singapore (NUS).
