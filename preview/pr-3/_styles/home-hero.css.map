@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["home-hero.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA","sourcesContent":[".home-hero {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 60px 20px 40px;\n}\n\n.home-hero-logo {\n  width: min(552px, 90vw);\n  height: auto;\n}\n"],"file":"home-hero.css"}
