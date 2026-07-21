@@ -1,7 +1,12 @@
 <header class="ribbon">
   <a href="{{ "/" | relative_url }}" class="home" data-tooltip="Home">
     <span class="logo">
-      <img src="{{ "images/cosi-logo-mid.svg" | relative_url | uri_escape }}" alt="cosilab logo">
+      <img src="{{ "images/cosi-logo-mid.svg" | relative_url | uri_escape }}" alt="Lab Logo">
+    </span>
+    <span class="title-text" data-tooltip="Home">
+      {% if site.title-long %}
+        <span class="title">{{ site.title-long }}</span>
+      {% endif %}
     </span>
   </a>
 
