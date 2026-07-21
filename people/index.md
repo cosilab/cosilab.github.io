@@ -1,11 +1,11 @@
 ---
-title: Group
+title: People
 nav:
   order: 1
   tooltip: About our team
 ---
 
-# {% include icon.html icon="fa-solid fa-users" %}Group
+# {% include icon.html icon="fa-solid fa-users" %}People
 
 ## Faculty
 
