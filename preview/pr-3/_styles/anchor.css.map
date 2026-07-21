@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["anchor.scss"],"names":[],"mappings":"AACA;EACE","sourcesContent":["// heading anchor links hidden — headings render as plain text\n.anchor {\n  display: none !important;\n}\n"],"file":"anchor.css"}

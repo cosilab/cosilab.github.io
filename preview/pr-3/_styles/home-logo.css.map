@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["home-logo.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA","sourcesContent":[".home-logo-div {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 60px 20px 40px;\n}\n\n.home-logo {\n  width: min(552px, 90vw);\n  height: auto;\n}\n"],"file":"home-logo.css"}
