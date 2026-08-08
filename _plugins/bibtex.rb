@@ -6,7 +6,8 @@
 # Supported custom fields (al-folio conventions):
 #   abbr          venue abbreviation, shown as a tag (e.g. NeurIPS, TACL)
 #   arxiv         arXiv id, adds an "arXiv" button and default link
-#   pdf           PDF url (bare filenames are ignored), adds a "PDF" button
+#   pdf           PDF url, or a bare filename resolved to assets/pdf/<name>
+#                 for locally hosted PDFs, adds a "PDF" button
 #   html          publisher page url, used as the title link when present
 #   code          repository url, adds a "Code" button
 #   supp          supplement url (bare filenames are ignored)
@@ -156,7 +157,8 @@ module Jekyll
 
     def pdf_url(entry)
       pdf = field(entry, :pdf)
-      url?(pdf) ? pdf : nil
+      return nil unless pdf
+      url?(pdf) ? pdf : "/assets/pdf/#{pdf}"
     end
 
     def arxiv_url(entry)
